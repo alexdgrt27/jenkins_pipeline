@@ -10,7 +10,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/USERNAME/html-css-docker-pipeline.git', branch: 'main'
+                git url: 'https://github.com/alexdgrt27/jenkins_pipeline.git', branch: 'main'
             }
         }
 
