@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex.com | Technology & Business Solutions</title>
+  <meta name="description" content="Alex.com – Elegant, modern, and innovative business solutions across IT, HR, Finance, Sales, Development, and Support." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5f6cff;
+      --secondary: #00d4ff;
+      --dark: #0b0f1a;
+      --light: #f5f7ff;
+      --glass: rgba(255,255,255,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0b0f1a, #141a33);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(11,15,26,0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #cfd3ff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: var(--secondary); }
+
+    .hero {
+      height: 90vh;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero h2 {
+      font-size: 56px;
+      line-height: 1.2;
+      background: linear-gradient(to right, #5f6cff, #00d4ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 25px 0;
+      font-size: 18px;
+      color: #cfd3ff;
+    }
+
+    .hero button {
+      padding: 14px 34px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 20px 40px rgba(0,212,255,0.3);
+      transition: transform 0.3s;
+    }
+
+    .hero button:hover { transform: translateY(-3px); }
+
+    .hero-visual {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cube {
+      width: 260px;
+      height: 260px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate 14s infinite linear;
+    }
+
+    .cube div {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: linear-gradient(135deg, rgba(95,108,255,0.8), rgba(0,212,255,0.8));
+      border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .cube .front  { transform: translateZ(130px); }
+    .cube .back   { transform: rotateY(180deg) translateZ(130px); }
+    .cube .right  { transform: rotateY(90deg) translateZ(130px); }
+    .cube .left   { transform: rotateY(-90deg) translateZ(130px); }
+    .cube .top    { transform: rotateX(90deg) translateZ(130px); }
+    .cube .bottom { transform: rotateX(-90deg) translateZ(130px); }
+
+    @keyframes rotate {
+      from { transform: rotateX(0) rotateY(0); }
+      to   { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 60px;
+      color: var(--secondary);
+    }
+
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: var(--glass);
+      border-radius: 22px;
+      padding: 35px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 40px 80px rgba(0,212,255,0.35);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .card h4 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .card p {
+      color: #cfd3ff;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #070a14;
+      padding: 40px 8%;
+      text-align: center;
+      color: #8b90ff;
+    }
+
+    footer p { margin-top: 10px; font-size: 14px; }
+
+    @media(max-width: 900px) {
+      .hero { grid-template-columns: 1fr; height: auto; padding-top: 80px; }
+      .hero-visual { margin-top: 60px; }
+      .hero h2 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Alex.com</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#departments">Departments</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Elegant Digital Solutions<br>for a Smarter Business</h2>
+    <p>Alex.com delivers world-class innovation across IT, HR, Finance, Sales, Development, and Customer Support with futuristic design and enterprise-grade technology.</p>
+    <button>Explore Our Services</button>
+  </div>
+
+  <div class="hero-visual">
+    <div class="cube">
+      <div class="front">IT</div>
+      <div class="back">HR</div>
+      <div class="right">Finance</div>
+      <div class="left">Sales</div>
+      <div class="top">Dev</div>
+      <div class="bottom">Support</div>
+    </div>
+  </div>
+</section>
+
+<section id="departments">
+  <h3>Our Departments</h3>
+  <div class="departments">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="IT Department">
+      <h4>Information Technology</h4>
+      <p>Enterprise infrastructure, cloud platforms, cybersecurity, DevOps automation, and digital transformation solutions.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="HR Department">
+      <h4>Human Resources</h4>
+      <p>Talent acquisition, employee engagement, learning platforms, and people-first organizational growth.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" alt="Finance Department">
+      <h4>Finance</h4>
+      <p>Financial planning, compliance, analytics, budgeting, and strategic investment management.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786" alt="Sales Department">
+      <h4>Sales & Marketing</h4>
+      <p>Growth-driven sales strategies, CRM systems, brand marketing, and global customer outreach.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Development">
+      <h4>Development</h4>
+      <p>Modern web, mobile, and enterprise application development using cutting-edge technologies.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="Support">
+      <h4>Customer Support</h4>
+      <p>24/7 technical and business support ensuring customer satisfaction and long-term partnerships.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <h2>Alex.com</h2>
+  <p>Innovating Business. Empowering People. © 2026</p>
+</footer>
+
+</body>
+</html>
